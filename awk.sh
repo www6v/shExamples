@@ -38,10 +38,10 @@ awk 'BEGIN{RS=" "}{print $0}' 2.txt
 
 # awk小技巧
 #可以打印一个文件下有多少行
-awk 'END{print NR}' /etc/passwd
+awk 'END{print NR}' 2.txt
 #可以打印最后一行
-awk 'END{print $0}' /etc/passwd 
+awk 'END{print $0}' 2.txt
 #可以打印文件内最后一行有多少个字段
 ##如果文件内有分隔符，需要指定分隔符
-awk -F ":" 'END{print NF}' /etc/passwd 
+awk -F " " 'END{print NF}' 2.txt
 
