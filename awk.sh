@@ -29,3 +29,19 @@ awk 'BEGIN{FS=":"}NR==2{print $1,$2}' 3.txt
 # OFS一般与FS或者-F共同使用  
 awk -F ":" 'NR==2{OFS="_";print $1,$2}' 3.txt
 awk 'BEGIN{FS=":";OFS="-"}NR==2{print $1,$2,$3}' 3.txt
+
+
+# RS指定结尾符一般与OFS配合
+awk 'BEGIN{RS=""}{print $0}' 2.txt
+awk 'BEGIN{RS=" "}{print $0}' 2.txt
+
+
+# awk小技巧
+#可以打印一个文件下有多少行
+awk 'END{print NR}' /etc/passwd
+#可以打印最后一行
+awk 'END{print $0}' /etc/passwd 
+#可以打印文件内最后一行有多少个字段
+##如果文件内有分隔符，需要指定分隔符
+awk -F ":" 'END{print NF}' /etc/passwd 
+
