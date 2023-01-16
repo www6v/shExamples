@@ -13,3 +13,11 @@ echo $(( a+b*c ))
 echo $(( (a+b)/c ))
 echo $(( (a*b)%c))
 
+
+## 
+var=test
+echo $var
+(var=notest;echo $var)
+echo $var
+{ var=notest;echo $var;}
+echo $var
